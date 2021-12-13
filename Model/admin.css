@@ -1,0 +1,154 @@
+	*{
+		margin:0;
+		padding:0;
+
+
+	}
+	
+	.main{
+		width:100%;
+		height:109vh;
+		background-image: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0, 0, 0, 0.541)50%), url(../Images/ie.jpg);
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-size: 100% 100%;
+		background-position: flex;
+	}
+	
+	.navbar{
+		width: 1200px;
+		height: 75px;
+		margin: auto;
+	}
+	
+	.icon{
+		width:300px;
+		float:left;
+		height: 70px;
+	}
+	
+	.logo{
+		color: red;
+		font-size:20px;
+		font-family:Arial;
+		padding-left:20px;
+		float:left;
+		padding-top: 10px;
+		cursor: default;
+	}
+	
+	.menu{
+		width: 400px;
+		float:left;
+		height: 70px;
+	}
+	
+	.menu ul{
+		float:left;
+		display: flex;
+		justify-content:center;
+		align-items: center;
+	}
+	
+	.menu ul li{
+		list-style: none;
+		margin-left:62px;
+		margin-top:27px;
+		font-size:14px;
+	}
+	.menu ul li a{
+		text-decoration:none;
+		color: white;
+		font-family: Arial;
+		font-weight: bold;
+		
+		
+	}
+	
+	ul li a:hover{
+		color: red;
+	}
+	.btnAdmin{
+		background: none;
+		border: none;
+		margin-top: 150px;
+		margin-left: 150px;
+		word-spacing: 50px
+		
+	}
+	.btnAdmin .adminbtn1{
+		
+		background: red;
+		font-size: 70px;
+		border-radius: 10px;
+		cursor: pointer;
+	}
+	.btnAdmin .adminbtn1 a{
+		
+		text-decoration: none;
+		color: black;	
+		transition: .03s ease;
+	}
+	.btnAdmin .adminbtn2{
+		background: red;
+		font-size: 70px;
+		border-radius: 10px;
+		cursor: pointer;
+	}
+	.btnAdmin .adminbtn2 a{
+		
+		text-decoration: none;
+		color: black;	
+		transition: .03s ease;
+	}
+	.btnAdmin .adminbtn3{
+		background: red;
+		font-size: 70px;
+		border-radius: 10px;
+		cursor: pointer;
+	}
+	.btnAdmin .adminbtn3 a{
+		
+		text-decoration: none;
+		color: black;	
+		transition: .03s ease;
+	}
+	.adminbtn1:hover{
+		background: yellow;
+		color: black;
+	}
+	.adminbtn2:hover{
+		background: yellow;
+		color: black;
+	}
+	.adminbtn3:hover{
+		background: yellow;
+		color: black;
+	}
+	.adminwc{
+		margin: 8px;
+		color: red;
+		padding-left:30px;
+		cursor: default;
+		 font-family: "Lucida Console", "Courier New", monospace;
+	}
+	
+	.adminwc span{
+		font-family: Arial;
+		color:yellow;
+		font-weight: bold;
+		font-size: 35px;
+	}
+	.adminwc .par{
+		font-family: arial;
+		color: red;
+	}
+	.roleAdmin{
+		
+		
+		text-align: center;
+		color:red;
+		font-size: 22px;
+		background-color:white;
+		margin: 2px;	
+	}
