@@ -70,6 +70,10 @@
 		color: red;
 	}
 	
+	span{
+		color:red;
+		font-size: 20px;
+	}
 	.login{
 		top: -50px;
 		left: 20px;

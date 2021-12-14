@@ -41,9 +41,9 @@
 						$password= $_POST["password"];
 						$wayuser= $_POST["wayuser"];
 
-					if(file_exists('indiuser.json'))
+					if(file_exists('../Model/indiuser.json'))
 								{
-					$jsondata=file_get_contents("indiuser.json");
+					$jsondata=file_get_contents("../Model/indiuser.json");
 				$data=json_decode($jsondata,true);
 									$extra = array(
 										'sname' => $_POST["sname"],
@@ -52,7 +52,7 @@
 									);
 									$data[] = $extra;
 									$final_data = json_encode($data);
-									if(file_put_contents('indiuser.json',$final_data))
+									if(file_put_contents('../Model/indiuser.json',$final_data))
 									{
 										$messege=" <label class ='success'> Successfully Done</label>"; 
 									}
@@ -102,7 +102,7 @@
 				<?php
 					if($isPost)
 					{
-						echo "<h3> ***** </h3><br/>";
+						echo "<h3>".$_POST["password"]."</h3><br/>";
 					}
 					else 
 					{					
@@ -119,7 +119,7 @@
 				<?php
 				if($isPost)
 					{
-						echo "<h3> ***** </h3><br/>";
+						echo "<h3>".$_POST["cpassword"]."</h3><br/>";
 					}
 					else 
 					{					

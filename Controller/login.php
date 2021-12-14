@@ -42,9 +42,9 @@
 						$password= $_POST["password"];
 						$wayuser= $_POST["wayuser"];
 
-					if(file_exists('indiuser.json'))
+					if(file_exists('../Model/indiuser.json'))
 								{
-					$jsondata=file_get_contents("indiuser.json");
+					$jsondata=file_get_contents("../Model/indiuser.json");
 				$data=json_decode($jsondata,true);
 									$extra = array(
 										'sname' => $_POST["sname"],
@@ -53,7 +53,7 @@
 									);
 									$data[] = $extra;
 									$final_data = json_encode($data);
-									if(file_put_contents('indiuser.json',$final_data))
+									if(file_put_contents('../Model/indiuser.json',$final_data))
 									{
 										$messege=" <label class ='success'> Successfully Done</label>"; 
 									}
@@ -79,7 +79,7 @@
 			
 			
 		
-				<form name="myform"  action="connection.php" method="POST" onsubmit="return validate()" ; >
+				<form name="myform" autocomplete="off" action="connection.php" method="POST" onsubmit="return validate()" ; >
 
 		
 		<table>
@@ -94,9 +94,10 @@
 				}
 				else 
 				{					
-				echo "<input type='text' id='sname' name='sname' >";
+				echo "<input type='text' id='sname' name='sname' placeholder='Example: Boss' >";
 				}
 				?>
+				<br/><span id="snamee"></span>
 				</td>
 			<tr>
 				<td>Password</td>
@@ -109,10 +110,10 @@
 					}
 					else 
 					{					
-						echo "<input type='password' id='password' name='password'  >";
+						echo "<input type='password' id='password' name='password' placeholder='Example: Boss@12345' >";
 					}
 				?>
-				
+				<br/><span id="passwordd"></span>
 				</td>
 			</tr>
 			<tr>
@@ -126,9 +127,10 @@
 					}
 					else 
 					{					
-						echo "<input type='password' id='cpassword' name='cpassword'  >";
+						echo "<input type='password' id='cpassword' name='cpassword' placeholder='Example: Boss@12345' >";
 					}
 				?>
+				<br/><span id="cpasswordd"></span>
 				</td>
 			</tr>
 			<tr>
@@ -141,9 +143,10 @@
 				echo "<h3>".$_POST["phone"]."</h3><br/>";
 				}
 				else{
-					echo "<input type='text' id='phone' name='phone' >";
+					echo "<input type='text' id='phone' name='phone' placeholder='Example: 01700000000'>";
 				}
 				?>
+				<br/><span id="phonee"></span>
 				</td>
 			</tr>
 			<tr>
@@ -163,6 +166,7 @@
 					<input type='radio' name='gender'   value='Others'> &nbsp;Others";
 				}
 				?>
+				<br/><span id="genderr"></span>
 				</div>
 				</td>
 			</tr>
@@ -188,6 +192,7 @@
 						<option>Student</option>";
 					}
 					?>
+					<br/><span id="selectionn"></span>
 					</td>
 			</tr>
 				<tr>
@@ -197,26 +202,11 @@
 
 		</form>
 			<script>
-					const togglebtn =document.querySelector('submit');
-					const divlist =document.querySelector('submit');
-
-					toggleBtn.addEventListener('click',()=>{
-						if(divlist.style.display ==='none')
-						{
-							divlist.style.display ='block';
-						}
-						else{
-							divlist.style.display ='none';
-						}
-					}
-					
-					)
-
 					function validate(){
-						var username=document.getElementById("sname");
-						var password=document.getElementById("password");
-						var confirmpassword=document.getElementById("cpassword");
-						var phonenumber=document.getElementById("phone");
+						var username=document.getElementById("sname").value;
+						var password=document.getElementById("password").value;
+						var confirmpassword=document.getElementById("cpassword").value;
+						var phonenumber=document.getElementById("phone").value;
 						//gender
 						var valid =false;
 						var checkgender=document.myform.gender;
@@ -229,39 +219,75 @@
 								break;
 							}
 						}
-						var selectuser=document.getElementById("selection");
+						var selectuser=document.getElementById("selection").value;
 
-						if(username.value.trim() =="")
+						if(username.trim() =="")
 						{
-							alert("You must fill up your name!");
+							document.getElementById("snamee").innerHTML="**You must fill up your name**";
 							return false;
 						}
-						else if(password.value.trim() =="")
+						if(username.length<3)
 						{
-							alert("You must fill up your password!");
+							document.getElementById("snamee").innerHTML="**You must fill up with a suitable name**";
 							return false;
 						}
-						else if(confirmpassword.value.trim() =="")
-						{
-							alert("You must fill up your confirm password!");
-							return false;
+						else{
+							document.getElementById("snamee").innerHTML="";
 						}
-						else if(phonenumber.value.trim() =="" || phonenumber.value.length < 11)
+						 if(password.trim() =="")
 						{
 							
-							alert("You must fill up your phone number with at least 11 digits!");	
+							document.getElementById("passwordd").innerHTML="**You must give a password**";
+							return false;
+						}
+						if(password.length<6)
+						{
+							document.getElementById("passwordd").innerHTML="**Password should be more than 6 characters**";
+							return false;
+						}
+						else{
+							document.getElementById("passwordd").innerHTML="";
+						}
+						 if(confirmpassword.trim() =="")
+						{
+							document.getElementById("cpasswordd").innerHTML="**You must confirm your password**";
+							return false;
+						}
+						if(confirmpassword != password)
+						{
+							document.getElementById("cpasswordd").innerHTML="**Password not matched**";
+							return false;
+						}
+						else{
+							document.getElementById("cpasswordd").innerHTML="";
+						}
+						 if(phonenumber.trim() =="" || phonenumber.length < 11 || phonenumber.length > 11)
+						{
 
+							document.getElementById("phonee").innerHTML="**You must fill up your phone number with 11 digits!**";
 							return false;		
-						}			
-						else if (!valid)
-						{		
-							alert("Select your gender!");
+						}	
+						if(isNaN(phonenumber)) 
+						{
 
+							document.getElementById("phonee").innerHTML="**You must fill up your phone number with only numbers!**";
+							return false;		
+						}	
+						else{
+							document.getElementById("phonee").innerHTML="";
+						}	
+						 if (!valid)
+						{		
+							
+							document.getElementById("genderr").innerHTML="**Select your gender";
 							return false; 
 						}
-						else if(selectuser.value.trim() =="select")
+						else{
+							document.getElementById("genderr").innerHTML="";
+						}
+						 if(selectuser.trim() =="select")
 						{
-							alert("You must select one user!");
+							alert("YOU HAVE TO SELECT ONE USER MODE!");
 							return false;
 						}	
 						else{
