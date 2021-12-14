@@ -1,5 +1,5 @@
 <?php
-	$jsondata=file_get_contents("guitarStudent.json");
+	$jsondata=file_get_contents("../Model/guitarStudent.json");
 	$data=json_decode($jsondata,true);
 	echo '<h3>All free song by Instructors</h3>';
 	$message="";

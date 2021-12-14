@@ -5,7 +5,7 @@
 <html>
 	<title> Harmony Music School </title>
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-		<link rel="stylesheet" href="login.css">
+		<link rel="stylesheet" href="../CSS/login.css">
 	
 	
 	
@@ -195,9 +195,11 @@
 					<br/><span id="selectionn"></span>
 					</td>
 			</tr>
+			
 				<tr>
 					<td><input class="btn" type="submit" value="Submit" name="btnClick" ></td> 
 				</tr>
+				
 			</table>
 
 		</form>

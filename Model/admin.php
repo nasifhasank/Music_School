@@ -4,7 +4,7 @@
 <html>
 	<title> Harmony Music School </title>
 
-		<link rel="stylesheet" href="admin.css">
+		<link rel="stylesheet" href="../CSS/admin.css">
 	
 <body>
 	<div class="main">
@@ -33,28 +33,32 @@
 					{
 						echo $_SESSION["logname"];
 					}
+					else{
+						echo "Please login again";
+					}
 				?> </span></h2>
 		</div>
 		<div class="roleAdmin">
 					<h2>
 					Choose one to View or Edit
 				</h2>
-				</div>
+			</div>
 		<div class="btnAdmin">
 		<!--
 		<input class="adminbtn1" type="submit" value="Courses" name="AdminbtnClick1">
 		-->
-		<button class="adminbtn1"><a href="#">Courses</a></button>	
+		<button onclick="load()" type="button" id="ajaxbtn" class="adminbtn1">COURSES</button>	
 		<!--
 		<input class="adminbtn2" type="submit" value="Instructors" name="AdminbtnClick2">
 		-->
-		<button class="adminbtn2"><a href="../Controller/indexread.php">Instructors</a></button>	
+		<button class="adminbtn2"><a href="../Controller/indexread.php">VIEW</a></button>	
 		<!--
 		<input class="adminbtn3" type="submit" value="Students" name="AdminbtnClick3">
 		-->
-		<button class="adminbtn3"><a href="#">Students</a></button>	
+		<button class="adminbtn3"><a href="../View/display.php">UPDATE</a></button>	
 		
 	  </div>
-	</div>
+	  <div class="ajaxinfo"  id="testt"  ></div>
+	<script src= "adminajax.js"></script>
 </body>
 </html>

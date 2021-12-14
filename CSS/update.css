@@ -70,6 +70,10 @@ ul li a:hover{
     color: red;
 }
 
+span{
+    color:red;
+    font-size: 20px;
+}
 .login{
     top: -50px;
     left: 20px;
@@ -148,36 +152,33 @@ ul li a:hover{
 }
 
 .userifPost{
-         top: 20px;
-		left: 20px;
-        font-size: 10px;
-		color: #fff;
-		position: relative;
-		padding-left:0px;
-		background-attachment: scroll;
-		background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%);
-		border-radius: 10px;
-		text-align: left;
-		color: red;
-    
+    top: -40px;
+    left: 20px;
+    font-size: 10px;
+    color: #fff;
+    position: relative;
+    padding-left:0px;
+    background-attachment: scroll;
+    background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%);
+    border-radius: 10px;
+    text-align: left;
+    color: red;
 }
 
 .userifPost h2{
-    
-    font-weight: bold;
+        
     text-align: center;
     color:red;
     font-size: 20px;
-    margin-top: 0px;
-    margin-right: 10px;
+    margin-top: 80px;
+    margin-right: 150px;
     
 }
 .userifPost a{
     text-decoration:none;
     color: yellow;
-    font-weight: bolder ;
+    font-weight: bold;
     transition: 0.4s ease;
-    
 }
 .userifPost a:hover{
     color: red;
