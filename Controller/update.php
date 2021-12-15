@@ -1,9 +1,9 @@
 <?php
 
-$conn = new mysqli('localhost','root','','harmony_music_school');
-error_reporting(0);
+	include ("connectdb.php") ;
+	error_reporting(0);
 
-	//$id = $_GET['id'];
+	$id = $_GET['id'];
 	$name = $_GET['name'];
 	$phone = $_GET['phone'];
 	$gender = $_GET['gender'];
@@ -37,14 +37,14 @@ error_reporting(0);
 		</div>
 		<div class="login">
 			<h2>Information</h2>
-				<form name="myform" autocomplete="off" action="../View/display.php" method="POST"  ; >
+				<form name="myform" autocomplete="off" action="" method="GET"  ; >
 		
 		<table>
 			<tr>
 				<td>Name</td>
 				<td> :</td>
 				<td>
-				 <input type='text' value="<?php echo "$name"?>"  name='name' >
+				 <input type='text' value=" <?php echo "$name"?>"  name='name' >
 				</td>
 		
 		
@@ -97,7 +97,7 @@ error_reporting(0);
 						
 				<option value= "wayuser"
 						<?php
-						if($wayuser == "Instructor")
+						if($User == "Instructor")
 						{
 							echo "selected";
 						}
@@ -105,7 +105,7 @@ error_reporting(0);
 					>Instructor</option>
 				<option
 						<?php
-						if($wayuser == "Student")
+						if($User == "Student")
 						{
 							echo "selected";
 						}
@@ -126,7 +126,6 @@ error_reporting(0);
 
 <?php
 
-//$conn = new mysqli('localhost','root','','info');
 if($_GET['submit'])
 {
 	$id = $_GET['id'];
@@ -135,19 +134,19 @@ if($_GET['submit'])
 	$gender = $_GET['gender'];
 	$wayuser= $_GET['User'];
 
-$query = "UPDATE REGISTRATION SET id='$id',name='$name',phone='$phone',gender='$gender',User='$wayuser' WHERE id='$id'";
+	$query = "UPDATE REGISTRATION SET id='$id',name='$name',phone='$phone',gender='$gender',User='$wayuser' WHERE id='$id'";
 
-$data = mysqli_query($conn,$query);
+	$data = mysqli_query($conn,$query);
 
-if($data)
-{
-	echo"<script>alert('Record Updated')</script>";
-	
-}
-	else 
-{
-	echo "Failed to Update Record";
-}
+	if($data)
+	{
+		echo "<script>alert('Record Updated to Database')</script>";
+		
+	}
+		else 
+	{
+		echo "Failed to Update Record";
+	}
 }
 
 ?>

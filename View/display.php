@@ -47,12 +47,13 @@
 			<td style='text-align:center;'>".$result['phone']."</td>
 			<td style='text-align:center;' >".$result['gender']."</td>
 			<td style='text-align:center;'>".$result['User']."</td>
+			
 			<td  style='text-align:center;'><a href='../Controller/update.php?
 			id=$result[id]&name=$result[name]&phone=$result[phone]&gender=$result[gender]&User=$result[User]'>
 			<input style='background:green ;font-size: 19px;'type='submit' value='Edit/Update' id='editbtn'></td>
-			
-			
-			<td  style='text-align:center;'><a href='../Controller/delete.php?id=$result[id]' onclick='return checkdelete()'><input style='background:red ;font-size: 19px;'type='submit' value='Delete' id='deleteBtn'></td>
+
+			<td  style='text-align:center;'><a href='../Controller/delete.php?id=$result[id]' onclick='return checkdelete()'>
+			<input style='background:red ;font-size: 19px;'type='submit' value='Delete' id='deleteBtn'></td>
 			
 			</tr>
 			";
